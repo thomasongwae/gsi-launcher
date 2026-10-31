@@ -65,25 +65,16 @@ jobs:
       - name: checkout scripts
         uses: actions/checkout@v4
         with:
-          repository: Kyros70/gsi-patches
+          repository: https://github.com/MisterZtr/LineageOS_gsi/tree/lineage-23.2/patches
           ref: lineage-fixed
-          token: ${{ secrets.PAT }}
           path: gsi-patches
 
       - name: checkout patches branch
         uses: actions/checkout@v4
         with:
-          repository: Kyros70/gsi-patches
+          repository: https://github.com/MisterZtr/LineageOS_gsi/tree/lineage-23.2/patches
           ref: ${{ inputs.rom }}-fixed
-          token: ${{ secrets.PAT }}
           path: patches-branch
-
-      - name: checkout signing keys
-        uses: actions/checkout@v4
-        with:
-          repository: Kyros70/gsi-keys
-          token: ${{ secrets.PAT }}
-          path: gsi-keys
 
       - uses: namespacelabs/nscloud-setup@v0
 
